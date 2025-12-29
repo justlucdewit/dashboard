@@ -63,3 +63,19 @@ body {
         height: calc(100% - 100px);
     }
 }
+
+.debug {
+    outline: 1px solid red;
+}
+
+main {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    section {
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 10px;
+    }
+}

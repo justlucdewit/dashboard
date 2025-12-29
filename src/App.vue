@@ -1,6 +1,6 @@
 
 <template>
-    <div>
+    <main>
         <Menu id="navigator" :model="items" class="w-full md:w-60">
             <template #start class="text-center">
                 <div class="w-1/1 text-center">
@@ -11,7 +11,7 @@
                 <span class="text-primary font-bold">{{ item.label }}</span>
             </template>
             <template #item="{ item, props }">
-                <a v-ripple class="flex items-center" v-bind="props.action">
+                <a v-ripple class="flex items-center" @click="openView(item.view)" v-bind="props.action">
                     <span :class="item.icon" />
                     <span>{{ item.label }}</span>
                     <Badge v-if="item.badge" class="ml-auto" :value="item.badge" />
@@ -24,11 +24,37 @@
                 </div>
             </template>
         </Menu>
-    </div>
+
+        <section>
+            <template v-if="Object.keys(views).includes(currentView)">
+                <component :is="views[currentView]" />
+            </template>
+
+            <div v-else class="card">
+                <h1 class="text-xl">
+                    Internal error: No view named '{{ currentView }}'
+                </h1>
+            </div>
+        </section>
+    </main>
 </template>
 
 <script setup>
 import { ref } from "vue";
+
+import Home from '@/views/Home.vue';
+import Settings from '@/views/Settings.vue';
+
+const currentView = ref('home');
+
+const openView = (view) => {
+    currentView.value = view;
+};
+
+const views = {
+    home: Home,
+    settings: Settings
+};
 
 const items = ref([
     {
@@ -36,29 +62,33 @@ const items = ref([
         items: [
             {
                 label: 'Home',
-                icon: 'pi pi-home'
+                icon: 'pi pi-home',
+                view: 'home'
             },
             {
                 label: 'Settings',
-                icon: 'pi pi-cog'
+                icon: 'pi pi-cog',
+                view: 'settings'
             }
         ]
     },
-    {
-        separator: true
-    },
-    {
-        label: 'Tools',
-        items: [
-            {
-                label: 'Timer',
-                icon: 'pi pi-clock'
-            },
-            {
-                label: 'Credentials',
-                icon: 'pi pi-lock'
-            }
-        ]
-    }
+    // {
+    //     separator: true
+    // },
+    // {
+    //     label: 'Tools',
+    //     items: [
+    //         {
+    //             label: 'Timer',
+    //             icon: 'pi pi-clock',
+    //             view: 'timer'
+    //         },
+    //         {
+    //             label: 'Credentials',
+    //             icon: 'pi pi-lock',
+    //             view: 'credentials'
+    //         }
+    //     ]
+    // }
 ]);
 </script>

@@ -11,6 +11,15 @@ import Menu from "primevue/menu";
 import Badge from "primevue/badge";
 import Avatar from "primevue/avatar";
 import Button from "primevue/button";
+import Toolbar from "primevue/toolbar";
+import IconField from "primevue/iconfield";
+import InputIcon from "primevue/inputicon";
+import InputText from "primevue/inputtext";
+import Accordion from 'primevue/accordion';
+import AccordionPanel from 'primevue/accordionpanel';
+import AccordionHeader from 'primevue/accordionheader';
+import AccordionContent from 'primevue/accordioncontent';
+import Select from 'primevue/select';
 import { definePreset } from '@primeuix/themes';
 import Aura from '@primeuix/themes/aura';
 
@@ -25,6 +34,16 @@ app.component('Menu', Menu);
 app.component('Badge', Badge);
 app.component('Avatar', Avatar);
 app.component('Button', Button);
+app.component('Toolbar', Toolbar);
+app.component('IconField', IconField);
+app.component('InputIcon', InputIcon);
+app.component('InputText', InputText);
+app.component('Accordion', Accordion);
+app.component('AccordionPanel', AccordionPanel);
+app.component('AccordionHeader', AccordionHeader);
+app.component('AccordionContent', AccordionContent);
+app.component('Select', Select);
+
 
 app.use(PrimeVue, {
     theme: {
