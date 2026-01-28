@@ -10,6 +10,10 @@ const settings = ref({
         welcomeMessage: 'Welcome to devdash'
     }
 });
+
+const loadSettingsFromMemory = () => {
+    // Loading settings from local storage
+};
 </script>
 
 <template>

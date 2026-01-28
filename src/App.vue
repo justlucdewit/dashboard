@@ -44,6 +44,7 @@ import { ref } from "vue";
 
 import Home from '@/views/Home.vue';
 import Settings from '@/views/Settings.vue';
+import Pomodoro from "./views/Pomodoro.vue";
 
 const currentView = ref('home');
 
@@ -53,7 +54,8 @@ const openView = (view) => {
 
 const views = {
     home: Home,
-    settings: Settings
+    settings: Settings,
+    pomodoro: Pomodoro
 };
 
 const items = ref([
@@ -72,23 +74,23 @@ const items = ref([
             }
         ]
     },
-    // {
-    //     separator: true
-    // },
-    // {
-    //     label: 'Tools',
-    //     items: [
-    //         {
-    //             label: 'Timer',
-    //             icon: 'pi pi-clock',
-    //             view: 'timer'
-    //         },
-    //         {
-    //             label: 'Credentials',
-    //             icon: 'pi pi-lock',
-    //             view: 'credentials'
-    //         }
-    //     ]
-    // }
+    {
+        separator: true
+    },
+    {
+        label: 'Tools',
+        items: [
+            {
+                label: 'Pomodoro',
+                icon: 'pi pi-stopwatch',
+                view: 'pomodoro'
+            },
+            // {
+            //     label: 'Credentials',
+            //     icon: 'pi pi-lock',
+            //     view: 'credentials'
+            // }
+        ]
+    }
 ]);
 </script>

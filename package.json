@@ -12,6 +12,8 @@
     "@primevue/auto-import-resolver": "^4.5.4",
     "@primevue/forms": "^4.5.4",
     "@tailwindcss/postcss": "^4.1.18",
+    "chart.js": "^4.5.1",
+    "chartjs": "^0.3.24",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.4",
     "tailwindcss-primeui": "^0.6.1",
