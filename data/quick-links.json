@@ -1,0 +1,44 @@
+[
+    {
+        "title": "ChatGPT",
+        "meta": "Prompting and code help",
+        "href": "https://chatgpt.com",
+        "icon": "./assets/icons/chatgpt.svg"
+    },
+    {
+        "title": "Gemini",
+        "meta": "Research and second pass",
+        "href": "https://gemini.google.com",
+        "icon": "./assets/icons/gemini.svg"
+    },
+    {
+        "title": "GitHub",
+        "meta": "Repos and pull requests",
+        "href": "https://github.com",
+        "icon": "./assets/icons/github.svg"
+    },
+    {
+        "title": "Bitbucket",
+        "meta": "Repos and pipelines",
+        "href": "https://bitbucket.org",
+        "icon": "./assets/icons/bitbucket.svg"
+    },
+    {
+        "title": "npm",
+        "meta": "Packages and versions",
+        "href": "https://www.npmjs.com",
+        "icon": "./assets/icons/npm.svg"
+    },
+    {
+        "title": "Can I use",
+        "meta": "Browser support checks",
+        "href": "https://caniuse.com",
+        "icon": "./assets/icons/caniuse.svg"
+    },
+    {
+        "title": "endoflife.date",
+        "meta": "Version lifecycle tracking",
+        "href": "https://endoflife.date",
+        "icon": "./assets/icons/endoflife.svg"
+    }
+]

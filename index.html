@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title>Workspace</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <main class="workspace-shell">
+            <div class="workspace-grid">
+                <section class="panel panel--compact quick-links-panel">
+                    <h1 class="panel-title">Quick links</h1>
+                    <div class="quick-links__grid" id="quick-links-grid"></div>
+                </section>
+
+                <section class="panel panel--compact news-panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Latest news</h1>
+                        <div class="news-feed-selector" id="news-feed-selector">
+                            <button class="news-feed-button" id="news-feed-button" type="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="news-feed-button__label">Feed</span>
+                                <span class="news-feed-button__value" id="news-feed-button-value">Hacker News</span>
+                                <span class="news-feed-button__caret" aria-hidden="true">▾</span>
+                            </button>
+                            <div class="news-feed-menu" id="news-feed-menu" role="menu" hidden>
+                                <button class="news-feed-menu__item" data-feed="hackernews" type="button" role="menuitem">Hacker News</button>
+                                <button class="news-feed-menu__item" data-feed="global" type="button" role="menuitem">Global news</button>
+                                <button class="news-feed-menu__item" data-feed="dutch" type="button" role="menuitem">Dutch news</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-meta-row">
+                        <span class="panel-kicker" id="news-status">Loading...</span>
+                        <span class="news-refresh-indicator" id="news-refresh-indicator">
+                            <span class="news-refresh-indicator__dot" aria-hidden="true"></span>
+                            <span id="news-refresh-text">Refreshing now</span>
+                        </span>
+                    </div>
+                    <div class="news-list" id="news-list"></div>
+                </section>
+                
+                <section class="panel panel--compact agenda-panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">This month</h1>
+                        <span class="panel-kicker" id="agenda-month-label"></span>
+                    </div>
+                    <div class="agenda-weekdays" id="agenda-weekdays"></div>
+                    <div class="agenda-grid" id="agenda-grid"></div>
+                    <div class="day-status" id="day-status">
+                        <div class="day-status__label-row">
+                            <span class="day-status__label">Work day</span>
+                            <span class="day-status__value" id="day-status-value">Pre-work</span>
+                        </div>
+                        <div class="day-status__bar" id="day-status-bar" hidden>
+                            <span class="day-status__fill" id="day-status-fill"></span>
+                        </div>
+                    </div>
+                </section>
+                <section class="panel panel--compact notepad-panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Notepad</h1>
+                        <span class="panel-kicker" id="notepad-status">Saved locally</span>
+                    </div>
+                    <textarea
+                        class="notepad-input"
+                        id="notepad-input"
+                        placeholder="Jot things down here..."
+                        spellcheck="false"
+                    ></textarea>
+                </section>
+                <section class="panel panel--compact pomodoro-panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Pomodoro</h1>
+                        <span class="panel-kicker" id="pomodoro-phase">Ready</span>
+                    </div>
+                    <div class="pomodoro-time" id="pomodoro-time">25:00</div>
+                    <div class="pomodoro-progress">
+                        <span class="pomodoro-progress__fill" id="pomodoro-progress-fill"></span>
+                    </div>
+                    <div class="pomodoro-actions">
+                        <button class="pomodoro-button pomodoro-button--primary" id="pomodoro-toggle" type="button">Start</button>
+                        <button class="pomodoro-button" id="pomodoro-reset" type="button">Reset</button>
+                    </div>
+                </section>
+                <section class="panel panel--compact moon-panel">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Night Shift</h1>
+                        <span class="panel-kicker" id="moon-next-phase">Loading...</span>
+                    </div>
+                    <div class="moon-panel__content">
+                        <div class="moon-visual" id="moon-visual">
+                            <span class="moon-visual__disc"></span>
+                            <span class="moon-visual__shadow" id="moon-shadow"></span>
+                        </div>
+                        <div class="moon-panel__meta">
+                            <span class="moon-panel__phase" id="moon-phase-label">Moon phase</span>
+                            <span class="moon-panel__illumination" id="moon-illumination">0% illuminated</span>
+                        </div>
+                        <div class="moon-quote-wrap">
+                            <blockquote class="moon-quote" id="moon-quote"></blockquote>
+                            <div class="moon-quote-progress">
+                                <span class="moon-quote-progress__fill" id="moon-quote-progress-fill"></span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div id="left">
+                <span id="weather">Locating...</span>
+            </div>
+
+            <div id="right">
+                <span id="date"></span> -
+                <span id="time"></span>
+            </div>
+        </footer>
+
+        <script src="./scripts.js"></script>
+    </body>
+</html>
